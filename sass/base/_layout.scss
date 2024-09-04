@@ -1,0 +1,61 @@
+@import './utils';
+
+.nav{
+    grid-column: full-start / full-end;
+    grid-row: 1/ span 1;
+    background-color: #2094FF;
+}
+.hero{
+    grid-column: full-start / full-end;
+}
+.transform{
+    grid-column: full-start / col-end 3;
+
+    @include responsive(680){
+        grid-column: full-start / full-end;
+        grid-row:3 / span 1;
+    }
+}
+.transform-img{
+    grid-column: col-end 3 / full-end;
+    grid-row:3 / span 1;
+
+    @include responsive(680){
+        grid-row:4 / span 1;
+        grid-column: full-start / full-end;
+    }
+}
+.stand{
+    grid-column: col-end 3 / full-end;
+    @include responsive(680){
+        grid-row:5 / span 1;
+        grid-column: full-start / full-end;
+    }
+}
+.stand-img{
+    grid-column: full-start / col-end 3;
+
+    @include responsive(680){
+        grid-row:6 / span 1;
+        grid-column: full-start / full-end;
+    }
+}
+.design{
+    grid-column: full-start / col-end 3;
+
+    @include responsive(680){
+        grid-row:7 / span 1;
+        grid-column: full-start / full-end;
+    }
+}
+.photography{
+    grid-column: col-end 3/ full-end;
+
+    @include responsive(680){
+        grid-row:8 / span 1;
+        grid-column: full-start / full-end;
+    }
+}
+.testimonials, .gallery, .footer{
+    grid-column: full-start / full-end;
+}

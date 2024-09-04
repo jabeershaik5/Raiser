@@ -1,0 +1,277 @@
+@import './base/base';
+@import './base/layout';
+@import './base/utils';
+
+.main{
+    display: grid;
+    grid-template-columns: [full-start] minmax(4rem, 1fr) repeat(6, [col-start] minmax(min-content, 14rem)[col-end]) minmax(4rem,1fr) [full-end];
+    grid-template-rows: 8rem calc(100vh - 8rem) repeat(3, 45rem)min-content 25vw min-content;
+
+    @include responsive(680){
+        grid-template-columns: [full-start] minmax(4rem, 1fr) repeat(6, [col-start] minmax(min-content, 14rem)[col-end]) minmax(4rem,1fr) [full-end];
+        grid-template-rows: 8rem calc(100vh - 8rem) repeat(4, 45rem)repeat(2, 45rem) min-content 25vw min-content;
+    }
+}
+.logo{
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    color:inherit;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding:0 4rem;
+    align-items: center;
+    color:white;
+    overflow: hidden;
+
+    &__list{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+
+        @include responsive(680){
+            display: none;
+        }
+
+        li{
+            margin:0 2rem;
+            cursor: pointer;
+        }
+    }
+    &__btn{
+        padding:1rem 1.5rem;
+        border-radius:20px;
+        outline: none;
+        border:none;
+        cursor: pointer;
+    }
+    &__menu-btn{
+        display: none;
+        cursor: pointer;
+
+        span{
+            display: block;
+            height:2px;
+            width:4rem;
+            background-color: white;
+            margin:1rem;
+
+        }
+
+        @include responsive(680){
+            display: inline-block;
+        }
+    }
+}
+
+.hero{
+    padding:4rem 3rem;
+    background-image: url('../assets/images/landing\ lemon\ page.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    &__title{
+        font-size: 4rem;
+        font-weight: 700;
+        color:white;
+        text-align: center;
+        margin-top: 4rem;
+    }
+    &__arrow{
+        height:10rem;
+        width:7rem;
+        color:white;
+    }
+}
+.transform-img{
+    @include background(url('../assets/images/markus-spiske-s05XKB6jK2c-unsplash.jpg'));
+}
+.stand-img{
+    @include background(url('../assets/images/thought-catalog-9aOswReDKPo-unsplash.jpg'));
+}
+.design{  
+    background-position: bottom;
+    
+
+    @include background(url('../assets/images/mae-mu-vbAEHCrvXZ0-unsplash.jpg'));
+
+    @include responsive(680){
+        background-position: 50% 100%;
+    }
+    @include responsive(480){
+        background-position: 50% 150%;
+    }
+    color:rgb(8, 100, 54);
+}
+.photography{
+    background-position: bottom;
+    @include background(url('../assets/images/charlesdeluvio-yPI38imbQSI-unsplash.jpg'));
+    color:rgb(89, 89, 11);
+}
+.design, .photography{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding:5rem 15rem;
+
+    @include responsive(1100){
+        padding: 5rem 8rem;
+    }
+    @include responsive(900){
+        padding: 3rem 5rem;
+        padding-top:8rem;
+    }
+    @include responsive(680){
+        padding:3rem 18rem;
+    }
+    
+    @include responsive(480){
+        padding:3rem 5rem;
+    }
+
+    &__title{
+        font-size: 2.5rem;
+        color:inherit;
+    }
+    &__content{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color:inherit;
+    }
+}
+
+.transform, .stand{
+    padding:5rem 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include responsive(1100){
+        padding: 5rem 8rem;
+    }
+    @include responsive(900){
+        padding: 5rem 5rem;
+    }
+    @include responsive(680){
+        text-align: center;
+        padding:5rem 10rem;
+    }
+    @include responsive(480){
+        
+        padding:5rem 5rem;
+    }
+
+    &__title{
+        font-size: 3.4rem;
+        font-weight: 700;
+        margin:2rem 0;
+    }
+    &__content{
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        color:rgb(96, 93, 93);
+    }
+    &__link{
+        margin: 1.5rem 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+}
+.testimonials{
+    padding:5rem;
+    text-align: center;
+
+    &__title{
+        font-size: 2rem;
+        color:gray;
+    }
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        font-size: 1.5rem;
+        padding:4rem 0;
+    }
+    &__card{
+        margin:1rem 2rem;
+
+        @include responsive(680){
+            margin:4rem 2rem;
+        };
+    }
+}
+
+.t-card{
+    &__image{
+        height:6rem;
+        width:6rem;
+        border-radius: 50%;
+        margin-bottom: 2rem;
+    }
+    &__review{
+        margin-bottom: 4rem;;
+    }
+    &__name{
+        p{
+            font-size: 1.4rem;
+            color:gray;
+        }
+    }
+    img{
+        object-fit: cover;
+        object-position: top;
+    }
+}
+.gallery{
+    grid-row: 7/ span 1;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    overflow: hidden;
+
+    @include responsive(680){
+        grid-row:10/ span 1;
+    }
+
+    &__image{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        object-position: 10% 10%;
+    }
+}
+
+.footer{
+    padding:2rem;
+    color:rgb(8, 100, 54);
+    background-color:#B4E6DA ;
+    text-align: center;
+
+    @include responsive(680){
+        grid-row:11/ span 1;
+    }
+
+    &__title{
+        font-size: 2.5rem;
+        margin: 2rem;
+    }
+    &__ul{
+        display: flex;
+        justify-content: center;
+
+        li{
+            margin:1rem 2.5rem;
+            font-size: 1.5rem;
+        }
+    }
+    &__icons{
+        height:2.5rem;
+        width:2.5rem;
+        fill:currentColor;
+        margin:0 1rem;
+        margin-top:5rem;
+    }
+}

@@ -1,0 +1,434 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media screen and (width <= 1100px) {
+  html {
+    font-size: 58%;
+  }
+}
+@media screen and (width <= 900px) {
+  html {
+    font-size: 56%;
+  }
+}
+@media screen and (width <= 680px) {
+  html {
+    font-size: 52%;
+  }
+}
+
+body {
+  background-color: rgb(237, 236, 236);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+a,
+a:link,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  grid-column: full-start/full-end;
+  grid-row: 1/span 1;
+  background-color: #2094FF;
+}
+
+.hero {
+  grid-column: full-start/full-end;
+}
+
+.transform {
+  grid-column: full-start/col-end 3;
+}
+@media screen and (width <= 680px) {
+  .transform {
+    grid-column: full-start/full-end;
+    grid-row: 3/span 1;
+  }
+}
+
+.transform-img {
+  grid-column: col-end 3/full-end;
+  grid-row: 3/span 1;
+}
+@media screen and (width <= 680px) {
+  .transform-img {
+    grid-row: 4/span 1;
+    grid-column: full-start/full-end;
+  }
+}
+
+.stand {
+  grid-column: col-end 3/full-end;
+}
+@media screen and (width <= 680px) {
+  .stand {
+    grid-row: 5/span 1;
+    grid-column: full-start/full-end;
+  }
+}
+
+.stand-img {
+  grid-column: full-start/col-end 3;
+}
+@media screen and (width <= 680px) {
+  .stand-img {
+    grid-row: 6/span 1;
+    grid-column: full-start/full-end;
+  }
+}
+
+.design {
+  grid-column: full-start/col-end 3;
+}
+@media screen and (width <= 680px) {
+  .design {
+    grid-row: 7/span 1;
+    grid-column: full-start/full-end;
+  }
+}
+
+.photography {
+  grid-column: col-end 3/full-end;
+}
+@media screen and (width <= 680px) {
+  .photography {
+    grid-row: 8/span 1;
+    grid-column: full-start/full-end;
+  }
+}
+
+.testimonials, .gallery, .footer {
+  grid-column: full-start/full-end;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: [full-start] minmax(4rem, 1fr) repeat(6, [col-start] minmax(min-content, 14rem) [col-end]) minmax(4rem, 1fr) [full-end];
+  grid-template-rows: 8rem calc(100vh - 8rem) repeat(3, 45rem) min-content 25vw min-content;
+}
+@media screen and (width <= 680px) {
+  .main {
+    grid-template-columns: [full-start] minmax(4rem, 1fr) repeat(6, [col-start] minmax(min-content, 14rem) [col-end]) minmax(4rem, 1fr) [full-end];
+    grid-template-rows: 8rem calc(100vh - 8rem) repeat(4, 45rem) repeat(2, 45rem) min-content 25vw min-content;
+  }
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4rem;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+.nav__list {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+@media screen and (width <= 680px) {
+  .nav__list {
+    display: none;
+  }
+}
+.nav__list li {
+  margin: 0 2rem;
+  cursor: pointer;
+}
+.nav__btn {
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.nav__menu-btn {
+  display: none;
+  cursor: pointer;
+}
+.nav__menu-btn span {
+  display: block;
+  height: 2px;
+  width: 4rem;
+  background-color: white;
+  margin: 1rem;
+}
+@media screen and (width <= 680px) {
+  .nav__menu-btn {
+    display: inline-block;
+  }
+}
+
+.hero {
+  padding: 4rem 3rem;
+  background-image: url("../assets/images/landing lemon page.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+.hero__title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-top: 4rem;
+}
+.hero__arrow {
+  height: 10rem;
+  width: 7rem;
+  color: white;
+}
+
+.transform-img {
+  background-image: url("../assets/images/markus-spiske-s05XKB6jK2c-unsplash.jpg");
+  background-size: cover;
+}
+@media screen and (width <= 680px) {
+  .transform-img {
+    background-position: bottom;
+  }
+}
+
+.stand-img {
+  background-image: url("../assets/images/thought-catalog-9aOswReDKPo-unsplash.jpg");
+  background-size: cover;
+}
+@media screen and (width <= 680px) {
+  .stand-img {
+    background-position: bottom;
+  }
+}
+
+.design {
+  background-position: bottom;
+  background-image: url("../assets/images/mae-mu-vbAEHCrvXZ0-unsplash.jpg");
+  background-size: cover;
+  color: rgb(8, 100, 54);
+}
+@media screen and (width <= 680px) {
+  .design {
+    background-position: bottom;
+  }
+}
+@media screen and (width <= 680px) {
+  .design {
+    background-position: 50% 100%;
+  }
+}
+@media screen and (width <= 480px) {
+  .design {
+    background-position: 50% 150%;
+  }
+}
+
+.photography {
+  background-position: bottom;
+  background-image: url("../assets/images/charlesdeluvio-yPI38imbQSI-unsplash.jpg");
+  background-size: cover;
+  color: rgb(89, 89, 11);
+}
+@media screen and (width <= 680px) {
+  .photography {
+    background-position: bottom;
+  }
+}
+
+.design, .photography {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 5rem 15rem;
+}
+@media screen and (width <= 1100px) {
+  .design, .photography {
+    padding: 5rem 8rem;
+  }
+}
+@media screen and (width <= 900px) {
+  .design, .photography {
+    padding: 3rem 5rem;
+    padding-top: 8rem;
+  }
+}
+@media screen and (width <= 680px) {
+  .design, .photography {
+    padding: 3rem 18rem;
+  }
+}
+@media screen and (width <= 480px) {
+  .design, .photography {
+    padding: 3rem 5rem;
+  }
+}
+.design__title, .photography__title {
+  font-size: 2.5rem;
+  color: inherit;
+}
+.design__content, .photography__content {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: inherit;
+}
+
+.transform, .stand {
+  padding: 5rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (width <= 1100px) {
+  .transform, .stand {
+    padding: 5rem 8rem;
+  }
+}
+@media screen and (width <= 900px) {
+  .transform, .stand {
+    padding: 5rem 5rem;
+  }
+}
+@media screen and (width <= 680px) {
+  .transform, .stand {
+    text-align: center;
+    padding: 5rem 10rem;
+  }
+}
+@media screen and (width <= 480px) {
+  .transform, .stand {
+    padding: 5rem 5rem;
+  }
+}
+.transform__title, .stand__title {
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+.transform__content, .stand__content {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: rgb(96, 93, 93);
+}
+.transform__link, .stand__link {
+  margin: 1.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.testimonials {
+  padding: 5rem;
+  text-align: center;
+}
+.testimonials__title {
+  font-size: 2rem;
+  color: gray;
+}
+.testimonials__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  font-size: 1.5rem;
+  padding: 4rem 0;
+}
+.testimonials__card {
+  margin: 1rem 2rem;
+}
+@media screen and (width <= 680px) {
+  .testimonials__card {
+    margin: 4rem 2rem;
+  }
+}
+
+.t-card__image {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+.t-card__review {
+  margin-bottom: 4rem;
+}
+.t-card__name p {
+  font-size: 1.4rem;
+  color: gray;
+}
+.t-card img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.gallery {
+  grid-row: 7/span 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+}
+@media screen and (width <= 680px) {
+  .gallery {
+    grid-row: 10/span 1;
+  }
+}
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 10% 10%;
+}
+
+.footer {
+  padding: 2rem;
+  color: rgb(8, 100, 54);
+  background-color: #B4E6DA;
+  text-align: center;
+}
+@media screen and (width <= 680px) {
+  .footer {
+    grid-row: 11/span 1;
+  }
+}
+.footer__title {
+  font-size: 2.5rem;
+  margin: 2rem;
+}
+.footer__ul {
+  display: flex;
+  justify-content: center;
+}
+.footer__ul li {
+  margin: 1rem 2.5rem;
+  font-size: 1.5rem;
+}
+.footer__icons {
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: currentColor;
+  margin: 0 1rem;
+  margin-top: 5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
